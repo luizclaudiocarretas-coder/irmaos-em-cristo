@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#14243a"><meta name="description" content="Podcasts, mensagens e pregações — Irmãos em Cristo – Luiz Cláudio">
+  <link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css"><title>Irmãos em Cristo</title>
+</head>
+<body>
+<header class="topbar"><div class="brand"><div class="brand-icon">♫</div><div><strong>IRMÃOS EM CRISTO</strong><small>Luiz Cláudio</small></div></div><button id="adminOpen" class="outline-btn">Área do administrador</button></header>
+<main>
+  <section class="hero"><div class="hero-copy"><span class="eyebrow">PALAVRA • FÉ • ESPERANÇA</span><h1>Alimente sua fé.<br><em>Ouça a Palavra.</em></h1><p>Mensagens, estudos bíblicos e pregações para acompanhar você onde estiver.</p><a href="#episodios" class="primary-btn">Ouvir episódios <span>↓</span></a></div><div class="hero-art" aria-hidden="true"><div class="halo"></div><div class="cross">✝</div><div class="sound">♪</div></div></section>
+  <section class="section" id="episodios"><div class="section-head"><div><span class="eyebrow">NOSSA PROGRAMAÇÃO</span><h2>Últimas mensagens</h2></div><div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Buscar pregação..." aria-label="Buscar pregação"></div></div>
+  <div id="status" class="status">Carregando mensagens…</div><div id="episodes" class="episodes"></div>
+  </section>
+  <section class="verse"><span>“A fé vem pelo ouvir, e o ouvir pela palavra de Cristo.”</span><small>ROMANOS 10:17</small></section>
+</main>
+<footer><strong>IRMÃOS EM CRISTO – LUIZ CLÁUDIO</strong><span>Que a Palavra de Deus alcance muitos corações. ❤️</span><small>Aplicativo independente de mensagens cristãs.</small></footer>
+<div id="player" class="player hidden"><div class="player-info"><strong id="playingTitle">Selecione uma mensagem</strong><small id="playingDesc">Irmãos em Cristo</small></div><audio id="audio" controls preload="none"></audio></div>
+<div id="adminModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="adminTitle"><div class="modal-card"><button class="close" id="adminClose" aria-label="Fechar">×</button><span class="eyebrow">ACESSO RESTRITO</span><h2 id="adminTitle">Painel do administrador</h2><p class="muted">Entre para publicar novas pregações e mensagens.</p>
+  <form id="loginForm"><label>E-mail<input id="email" type="email" autocomplete="username" required placeholder="seu@email.com"></label><label>Senha<input id="password" type="password" autocomplete="current-password" required placeholder="Sua senha"></label><button class="primary-btn full" type="submit">Entrar</button><p id="loginMessage" class="form-message"></p></form>
+  <form id="uploadForm" class="hidden"><div class="admin-welcome"><strong>Você está conectado.</strong><button type="button" id="logout" class="text-btn">Sair</button></div><label>Título da pregação<input id="title" required maxlength="100" placeholder="Ex.: A força da oração"></label><label>Descrição<textarea id="description" rows="3" maxlength="500" placeholder="Escreva uma breve descrição"></textarea></label><label>Categoria<select id="category"><option>Pregação</option><option>Estudo bíblico</option><option>Oração</option><option>Devocional</option><option>Testemunho</option></select></label><label>Arquivo de áudio (MP3, M4A, OGG ou WAV)<input id="audioFile" type="file" accept="audio/*" required></label><button class="primary-btn full" type="submit">Publicar episódio</button><p id="uploadMessage" class="form-message"></p></form>
+  <p class="setup-note" id="setupNote">O painel será ativado depois de conectar o projeto ao serviço de armazenamento.</p>
+ </div></div>
+<script src="config.js"></script><script type="module" src="app.js"></script>
+</body></html>
